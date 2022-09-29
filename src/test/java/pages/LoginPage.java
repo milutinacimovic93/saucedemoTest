@@ -11,6 +11,10 @@ public class LoginPage extends BasePage{
     private WebElement passwordField;
     private WebElement loginButton;
 
+    public LoginPage() {
+
+    }
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
