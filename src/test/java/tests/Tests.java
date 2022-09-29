@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.CheckoutInformation;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.YourKartPage;
@@ -16,6 +17,7 @@ public class Tests {
     private LoginPage loginPage;
     private HomePage homePage;
     private YourKartPage yourKartPage;
+    private CheckoutInformation checkInformationPage;
 
     @BeforeClass
     public void setup() {
@@ -25,6 +27,8 @@ public class Tests {
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         yourKartPage = new YourKartPage(driver);
+        checkInformationPage = new CheckoutInformation(driver);
+
     }
 
     @Test
@@ -47,15 +51,33 @@ public class Tests {
         testAddToKart();
         homePage.getCheckout().click();
         yourKartPage.getCheckout().click();
-        String expectedResult = "PRODUCTS";
+        String expectedResult = "CHECKOUT: YOUR INFORMATION";
         String actualResult = loginPage.getDriver().findElement(By.className("title")).getText();
         Assert.assertEquals(expectedResult,actualResult);
     }
 
+    @Test
+    public void fillInformationTest() {
+        checkout();
+        checkInformationPage.getFirstName().sendKeys("User");
+        checkInformationPage.getLastName().sendKeys("Pass");
+        checkInformationPage.getPostalCode().sendKeys("23233");
+        checkInformationPage.getContinueButton().click();
+        Assert.assertTrue(checkInformationPage.getFinish().isDisplayed());
+        checkInformationPage.getFinish().click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertTrue(checkInformationPage.getFinalPic().isDisplayed());
+    }
+
+
     @AfterClass
     public void afterClass() {
         try {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
