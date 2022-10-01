@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e562d5b5-61e1-4cfc-9fe5-7cf4df583eae" name="Changes" comment="Added CheckoutInformation and fillInformationTest">
+    <list default="true" id="e562d5b5-61e1-4cfc-9fe5-7cf4df583eae" name="Changes" comment="Added WebDriverWait, fixed tests, and changed from using test in test, now all tests are succesful">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckoutInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckoutInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/YourKartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/YourKartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +40,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.Tests">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="saucedemoTest" />
       <method v="2">
@@ -111,6 +107,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.logOut" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="saucedemoTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.Tests" />
+      <option name="METHOD_NAME" value="logOut" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tests.testAddToKart" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="saucedemoTest" />
       <extension name="coverage">
@@ -129,31 +143,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.testLogin" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="saucedemoTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.Tests" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Tests.logOut" />
         <item itemvalue="TestNG.Tests" />
         <item itemvalue="TestNG.Tests.fillInformationTest" />
         <item itemvalue="TestNG.Tests.testAddToKart" />
         <item itemvalue="TestNG.Tests.checkout" />
-        <item itemvalue="TestNG.Tests.testLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664490166712</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added WebDriverWait, fixed tests, and changed from using test in test, now all tests are succesful">
+      <created>1664639912173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664639912173</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +208,7 @@
     <MESSAGE value="Added BasePage,HomePage,LoginPage, and LoginTest, with one testLogin method." />
     <MESSAGE value="Added YourKart page, and AddtoKart and checkout tests." />
     <MESSAGE value="Added CheckoutInformation and fillInformationTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CheckoutInformation and fillInformationTest" />
+    <MESSAGE value="Added WebDriverWait, fixed tests, and changed from using test in test, now all tests are succesful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added WebDriverWait, fixed tests, and changed from using test in test, now all tests are succesful" />
   </component>
 </project>

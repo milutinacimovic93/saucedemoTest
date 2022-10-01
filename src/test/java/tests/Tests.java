@@ -90,11 +90,24 @@ public class Tests {
         Assert.assertTrue(checkInformationPage.getFinalPic().isDisplayed());
     }
 
+    @Test(priority = 5)
+    public void logOut() throws InterruptedException {
+        loginPage.login("standard_user", "secret_sauce");
+        homePage.getMenuButton().click();
+        Thread.sleep(2000);
+        homePage.getLogout().click();
+        Thread.sleep(1000);
+        driver.get("https://www.saucedemo.com/cart.html");
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3"));
+        String actualResult = errorMessage.getText();
+        String expectedResult = "Epic sadface: You can only access '/cart.html' when you are logged in.";
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 
     @AfterClass
     public void afterClass() {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

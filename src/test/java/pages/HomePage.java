@@ -14,6 +14,7 @@ public class HomePage extends BasePage{
     private WebElement addToKart;
     private WebElement removeButton;
     private WebElement checkout;
+    private WebElement logout;
 
     public HomePage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
@@ -39,4 +40,7 @@ public class HomePage extends BasePage{
         return getDriver().findElement(By.xpath("//*[@id=\"shopping_cart_container\"]"));
     }
 
+    public WebElement getLogout() {
+        return getDriver().findElement(By.xpath("//*[@id=\"logout_sidebar_link\"]"));
+    }
 }
