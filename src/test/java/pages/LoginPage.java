@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 
 public class LoginPage extends BasePage{
@@ -15,8 +16,8 @@ public class LoginPage extends BasePage{
 
     }
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
 
     public WebElement getUsernameField() {

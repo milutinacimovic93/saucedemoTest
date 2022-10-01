@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ public class HomePage extends BasePage{
     private WebElement removeButton;
     private WebElement checkout;
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
 
     public WebElement getMenuButton() {

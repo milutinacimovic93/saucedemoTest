@@ -2,10 +2,13 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CheckoutInformation;
 import pages.HomePage;
@@ -18,20 +21,27 @@ public class Tests {
     private HomePage homePage;
     private YourKartPage yourKartPage;
     private CheckoutInformation checkInformationPage;
+    private WebDriver driver;
+    private WebDriverWait driverWait;
 
     @BeforeClass
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C://Users//ROG//IdeaProjects/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com");
-        loginPage = new LoginPage(driver);
-        homePage = new HomePage(driver);
-        yourKartPage = new YourKartPage(driver);
-        checkInformationPage = new CheckoutInformation(driver);
+        driver = new ChromeDriver();
+        driver.get("https://www.saucedemo.com/");
+        loginPage = new LoginPage(driver, driverWait);
+        homePage = new HomePage(driver, driverWait);
+        yourKartPage = new YourKartPage(driver, driverWait);
+        checkInformationPage = new CheckoutInformation(driver, driverWait);
 
     }
 
-    @Test
+    @BeforeMethod
+    public void load() {
+        driver.get("https://www.saucedemo.com/");
+    }
+
+    @Test(priority = 1)
     public void testLogin() {
         loginPage.login("standard_user", "secret_sauce");
         String expectedResult = "PRODUCTS";
@@ -39,16 +49,19 @@ public class Tests {
         Assert.assertEquals(expectedResult,actualResult);
     }
 
-    @Test
+    @Test(priority = 2)
     public void testAddToKart() {
-        testLogin();
+        loginPage.login("standard_user", "secret_sauce");
         homePage.getAddToKart().click();
+        homePage.getCheckout().click();
         Assert.assertTrue(homePage.getRemoveButton().isDisplayed());
     }
 
-    @Test
+    @Test(priority = 3)
     public void checkout() {
-        testAddToKart();
+        loginPage.login("standard_user", "secret_sauce");
+        WebElement kasa = homePage.getDriver().findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span"));
+        kasa.click();
         homePage.getCheckout().click();
         yourKartPage.getCheckout().click();
         String expectedResult = "CHECKOUT: YOUR INFORMATION";
@@ -56,9 +69,13 @@ public class Tests {
         Assert.assertEquals(expectedResult,actualResult);
     }
 
-    @Test
+    @Test(priority = 4)
     public void fillInformationTest() {
-        checkout();
+        loginPage.login("standard_user", "secret_sauce");
+        WebElement kasa = homePage.getDriver().findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span"));
+        kasa.click();
+        homePage.getCheckout().click();
+        yourKartPage.getCheckout().click();
         checkInformationPage.getFirstName().sendKeys("User");
         checkInformationPage.getLastName().sendKeys("Pass");
         checkInformationPage.getPostalCode().sendKeys("23233");

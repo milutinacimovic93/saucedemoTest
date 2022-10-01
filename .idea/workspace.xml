@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e562d5b5-61e1-4cfc-9fe5-7cf4df583eae" name="Changes" comment="Added YourKart page, and AddtoKart and checkout tests.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CheckoutInformation.java" afterDir="false" />
+    <list default="true" id="e562d5b5-61e1-4cfc-9fe5-7cf4df583eae" name="Changes" comment="Added CheckoutInformation and fillInformationTest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CheckoutInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CheckoutInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/YourKartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/YourKartPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.Tests.fillInformationTest">
+  <component name="RunManager" selected="TestNG.Tests">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="saucedemoTest" />
       <method v="2">
@@ -54,7 +58,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddToKartTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="saucedemoTest" />
       <extension name="coverage">
         <pattern>
@@ -63,7 +67,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AddToKartTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.Tests" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -145,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Tests" />
         <item itemvalue="TestNG.Tests.fillInformationTest" />
-        <item itemvalue="TestNG.Tests.checkout" />
         <item itemvalue="TestNG.Tests.testAddToKart" />
+        <item itemvalue="TestNG.Tests.checkout" />
         <item itemvalue="TestNG.Tests.testLogin" />
-        <item itemvalue="TestNG.AddToKartTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664479946130</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added CheckoutInformation and fillInformationTest">
+      <created>1664490166712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664490166712</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,17 +204,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added BasePage,HomePage,LoginPage, and LoginTest, with one testLogin method." />
     <MESSAGE value="Added YourKart page, and AddtoKart and checkout tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added YourKart page, and AddtoKart and checkout tests." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pages/YourKartPage.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added CheckoutInformation and fillInformationTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CheckoutInformation and fillInformationTest" />
   </component>
 </project>

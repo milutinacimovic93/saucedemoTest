@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class YourKartPage extends BasePage{
 
@@ -12,8 +13,8 @@ public class YourKartPage extends BasePage{
 
 
 
-    public YourKartPage(WebDriver driver) {
-        super(driver);
+    public YourKartPage(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
 
     public WebElement getContinueShoppingButton() {

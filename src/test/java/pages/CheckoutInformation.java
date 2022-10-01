@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckoutInformation extends BasePage{
 
@@ -13,8 +14,8 @@ public class CheckoutInformation extends BasePage{
     private WebElement finish;
     private WebElement finalPic;
 
-    public CheckoutInformation(WebDriver driver) {
-        super(driver);
+    public CheckoutInformation(WebDriver driver, WebDriverWait driverWait) {
+        super(driver, driverWait);
     }
 
     public WebElement getFirstName() {
